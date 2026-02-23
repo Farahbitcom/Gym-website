@@ -50,6 +50,8 @@ gym-website/
 ├── style.css
 ├── script.js
 
+
+
 🎯 Sections Included
 
 🏠 Home Section
