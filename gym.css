@@ -1,0 +1,339 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #0f0f0f;       /* Deep Black */
+    --snd-bg-color: #1f1f1f;   /* Coal Grey */
+    --text-color: #ffffff;     /* White */
+    --main-color: #ff4d00;     /* Electric Orange */
+}
+
+html { font-size: 62.5%; overflow-x: hidden; }
+
+body { background: var(--bg-color); color: var(--text-color); }
+
+section { min-height: 100vh; padding: 10rem 9% 2rem; }
+
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 2rem 9%;
+    background: rgba(15, 15, 15, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px solid var(--main-color);
+}
+#menu-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    display: none; 
+}
+
+.logo { font-size: 2.8rem; color: #fff; font-weight: 800; letter-spacing: 1px; }
+.logo span { color: var(--main-color); }
+
+.navbar a {
+    font-size: 1.7rem;
+    color: #fff;
+    margin-left: 4rem;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.navbar a:hover, .navbar a.active { color: var(--main-color); }
+
+.heading { font-size: 4.5rem; text-align: center; margin-bottom: 5rem; text-transform: uppercase; }
+span { color: var(--main-color); }
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070') no-repeat center center/cover;
+}
+
+.home-content h1 { font-size: 8rem; margin: 1rem 0; line-height: 1; }
+.home-content h3 { font-size: 2.4rem; color: var(--main-color); text-transform: uppercase; }
+.home-content p { font-size: 1.6rem; max-width: 600px; margin-bottom: 3rem; color: #ccc; }
+
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: .5rem; /* Squared edges look more "tough" for a gym */
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn:hover { background: #e64500; box-shadow: 0 0 2rem rgba(255, 77, 0, 0.4); }
+
+/* Facilities */
+.facilities { background: var(--bg-color); }
+.facilities-container { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+.facility-box {
+    flex: 1 1 30rem;
+    padding: 4rem 3rem;
+    background: var(--snd-bg-color);
+    border-radius: 1rem;
+    text-align: center;
+    transition: .4s;
+    border-bottom: 4px solid transparent;
+}
+.facility-box:hover { transform: translateY(-1rem); border-color: var(--main-color); }
+.facility-box i { font-size: 5rem; color: var(--main-color); }
+.facility-box h3 { font-size: 2.5rem; margin: 1.5rem 0; color: #fff; }
+.facility-box p { font-size: 1.4rem; color: #bbb; }
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+.service-item {
+    background: var(--snd-bg-color);
+    padding: 3rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+.service-item i { font-size: 4rem; color: var(--main-color); margin-bottom: 1rem; }
+.service-item h3 { font-size: 1.8rem; }
+
+/* Plans Section Styling */
+.plans {
+    background: var(--snd-bg-color);
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.plan-card {
+    background: var(--bg-color);
+    padding: 4rem 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    position: relative;
+    border: 1px solid #333;
+    transition: 0.3s ease;
+}
+
+.plan-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* Featured Card Highlights */
+.active-plan {
+    border: 2px solid var(--main-color);
+    padding: 6rem 3rem; /* Makes it slightly taller to stand out */
+    box-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
+}
+
+.price {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 2rem 0;
+    color: #fff;
+}
+
+.price span {
+    font-size: 1.6rem;
+    color: #888;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    text-align: left;
+    color: #ccc;
+}
+
+.plan-card ul li {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plan-card ul li i.bx-check {
+    color: var(--main-color);
+    font-size: 1.8rem;
+}
+
+.plan-card ul li i.bx-x {
+    color: #555;
+    font-size: 1.8rem;
+}
+
+.badge {
+    position: absolute;
+    top: 2rem;
+    right: -1rem;
+    background: var(--main-color);
+    color: #fff;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transform: rotate(5deg);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .active-plan {
+        padding: 4rem 3rem;
+        transform: none;
+    }
+}
+
+/* =========================================
+   RESPONSIVENESS (MEDIA QUERIES)
+   ========================================= */
+
+/* For Tablets and Smaller Desktops */
+@media (max-width: 1200px) {
+    html { font-size: 55%; }
+    section { padding: 10rem 3% 2rem; }
+}
+
+@media (max-width: 991px) {
+    .header { padding: 2rem 3%; }
+    .home-content h1 { font-size: 6rem; }
+}
+
+/* For Mobile Devices (Hamburger Menu) */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Show the hamburger icon */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        display: none; /* Hide menu by default */
+    }
+
+    .navbar.active {
+        display: block; /* Show menu when clicking icon */
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+
+    .home-content h1 { font-size: 5rem; }
+    .home-content h3 { font-size: 2rem; }
+    
+    .facilities-container, 
+    .services-grid, 
+    .plans-container {
+        grid-template-columns: 1fr; /* Stack everything in 1 column */
+    }
+
+    .active-plan {
+        transform: scale(1); /* Remove the zoom effect on mobile to save space */
+        margin: 2rem 0;
+    }
+}
+
+/* For Very Small Phones */
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+    .home-content h1 { font-size: 4rem; }
+    .logo { font-size: 2.2rem; }
+}
+/* Footer Section Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8rem 9%;
+    background: var(--bg-color);
+    border-top: 2px solid var(--main-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+.footer-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: var(--snd-bg-color);
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0 .5rem;
+    transition: .3s ease;
+}
+
+.footer-social a:hover {
+    background: var(--main-color);
+    color: #fff;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .3s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+/* Responsiveness for Footer */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-text p {
+        margin-top: 1rem;
+    }
+}
